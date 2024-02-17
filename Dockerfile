@@ -1,4 +1,4 @@
-FROM openjdk:8
-EXPOSE 8080
-ADD ../target/Jenkins_Integration_Demo.jar Jenkins_Integration_Demo.jar
-ENTRYPOINT ["java","-jar","/Jenkins_Integration_Demo.jar"]
+FROM openjdk:11
+ARG JAR_FILE=target/*.jar
+COPY ./target/Jenkins_Integration_Demo-0.0.1-SNAPSHOT.jar app.jar
+ENTRYPOINT ["java", "-jar", "/app.jar"]
