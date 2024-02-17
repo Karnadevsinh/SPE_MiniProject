@@ -1,1 +1,3 @@
-RUN echo "Hello docker!"
+FROM scratch
+ADD hello /
+CMD ["/hello"]
