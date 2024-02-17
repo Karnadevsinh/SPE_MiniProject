@@ -1,7 +1,5 @@
 FROM openjdk
-WORKDIR /app
-COPY . /app
-RUN JenkinsIntegrationDemoApplication.class
-CMD["javac", "JenkinsIntegrationDemoApplication"]
-RUN JenkinsIntegrationDemoApplication.java
-CMD["java", "JenkinsIntegrationDemoApplication"]
+
+COPY target/Jenkins_Integration_Demo-*.jar /demo.jar
+
+CMD ["java", "-jar", "/demo.jar"]
