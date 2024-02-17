@@ -1,3 +1,4 @@
-FROM openjdk:11
-COPY ../target/SPE-MiniProject-1.0-SNAPSHOT.jar ./app/
-WORKDIR ./app/
+FROM openjdk:8
+EXPOSE 8080
+ADD ../target/Jenkins_Integration_Demo.jar Jenkins_Integration_Demo.jar
+ENTRYPOINT ["java","-jar","/Jenkins_Integration_Demo.jar"]
